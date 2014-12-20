@@ -19,7 +19,7 @@
 ########################################################################
 getwd()
 ###
-setwd("Insert your directory location here/UCI HAR Dataset/")
+#setwd("Insert your directory location here/UCI HAR Dataset/")
 
 ########################################################################
 #libraries needed; be sure these packages are first installed 
@@ -104,10 +104,14 @@ final<-summarize(group_by(long_tidy,Subject,Activity,Feature),mean(value))
 #quick sanity check to see if this data produces same 
 #data (albeit formated diffently) to that posted in FAQ by "Brandon"
 #final[final$Subject==1,]
+
+
+####This will produce the tidy data as requested in the assignment
+
 final
 
 ########################################################################
 ###creating sharable file
 ########################################################################
-write.table(final,file = "./finalTidyData.txt",row.name=FALSE)
+#write.table(final,file = "./finalTidyData.txt",row.name=FALSE)
 
