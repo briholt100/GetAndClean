@@ -15,7 +15,7 @@ output: html_document
 #### Table of Contents
 1. [Subjects](https://github.com/briholt100/GetAndClean/blob/master/Codebook.md#subjects)
 2. [Activities](https://github.com/briholt100/GetAndClean/blob/master/Codebook.md#activities)
-3. [Transformations](https://github.com/briholt100/GetAndClean/blob/master/Codebook.md#transformations)
+3. [Transformations](https://github.com/briholt100/GetAndClean/blob/master/Codebook.md#tranformations)
 4. [Features](https://github.com/briholt100/GetAndClean/blob/master/Codebook.md#features)
 5. [Values](https://github.com/briholt100/GetAndClean/blob/master/Codebook.md#values)
 6. [References](https://github.com/briholt100/GetAndClean/blob/master/Codebook.md#references)
@@ -59,8 +59,49 @@ output: html_document
 
 4. Feature (Anguita et al., 2012)^1^
   + Original 561 features are found in features.txt and features_info.txt  
-  + 
+  + Each Feature name contains several parts that define what the value means.
+  + Using the original Human_Activity_Recognition_README.txt document (Anguita et al. 2012)^1^, 88 variables were extracted.  These varialbes all included measurements mean and standard deviation values from the original data. Below is a list of these features.  You should notice that each feature contains either "mean" or "std" (short for standard deviation).
+  + "The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz.  " (Anguita et al., 2012)^1^
+  
+  + "Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag).   " (Anguita et al., 2012)^1^
 
+  + "Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals)." (Anguita et al., 2012)^1^  
+
+  + "These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions." (Anguita et al., 2012)^1^  
+
+    + tBodyAcc-XYZ
+    + tGravityAcc-XYZ
+    + tBodyAccJerk-XYZ
+    + tBodyGyro-XYZ
+    + tBodyGyroJerk-XYZ
+    + tBodyAccMag
+    + tGravityAccMag
+    + tBodyAccJerkMag
+    + tBodyGyroMag
+    + tBodyGyroJerkMag
+    + fBodyAcc-XYZ
+    + fBodyAccJerk-XYZ
+    + fBodyGyro-XYZ
+    + fBodyAccMag
+    + fBodyAccJerkMag
+    + fBodyGyroMag
+    + fBodyGyroJerkMag
+        
+  + Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
+        
+    + gravityMean
+    + tBodyAccMean
+    + tBodyAccJerkMean
+    + tBodyGyroMean
+    + tBodyGyroJerkMean  
+    
+        
+  + Additionally, several of these variables were used to estiamate:
+        
+    + meanFreq
+
+  + #####The final set of features include:
         1. tBodyAcc.mean...X   
         2. tBodyAcc.mean...Y   
         3. tBodyAcc.mean...Z   
@@ -146,7 +187,9 @@ output: html_document
         83. angle.tBodyGyroJerkMean.gravityMean.   
         84. angle.X.gravityMean.   
         85. angle.Y.gravityMean.   
-        86. angle.Z.gravityMean.         
+        86. angle.Z.gravityMean.   
+  + Should some of the varialbes be excluded?  
+      + In Wood's FAQ (2014)^4^, some argued that the variables similar to "angle.tBodyAccMean.gravity." should have been excluded. Though possible, the instructions were not clear enough in the assignment nor the original feature descriptions for this data munger to be competent to exclude some mean/std variables over others.  Given this, a more inclusive set of data is included simply because it would be much more easy to remove variables that are not needed than it would to add new varialbes in.
 
 #####Values
 
