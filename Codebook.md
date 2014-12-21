@@ -15,21 +15,22 @@ output: html_document
 #### Table of Contents
 1. [Subjects](https://github.com/briholt100/GetAndClean/blob/master/Codebook.md#subjects)
 2. [Activities](https://github.com/briholt100/GetAndClean/blob/master/Codebook.md#activities)
-3. [Features](https://github.com/briholt100/GetAndClean/blob/master/Codebook.md#features)
-4. [Values](https://github.com/briholt100/GetAndClean/blob/master/Codebook.md#values)
-5. [References](https://github.com/briholt100/GetAndClean/blob/master/Codebook.md#references)
+3. [Transformations](https://github.com/briholt100/GetAndClean/blob/master/Codebook.md#transformations)
+4. [Features](https://github.com/briholt100/GetAndClean/blob/master/Codebook.md#features)
+5. [Values](https://github.com/briholt100/GetAndClean/blob/master/Codebook.md#values)
+6. [References](https://github.com/briholt100/GetAndClean/blob/master/Codebook.md#references)
 
 
 
 #####Subjects
 
-1. Subject (Anguita et al., 2012)
+1. Subject (Anguita et al., 2012)^1^
      + Subject Unique Identifer
      + There are 30 subjects, numbered from "1" through "30"  
 
 #####Activities
 
-2. Activity (Anguita et al., 2012)
+2. Activity (Anguita et al., 2012)^1^
   + There are 6 activities performed by subjects while wearing a smartphone:  
   
       Data  |   Description
@@ -41,9 +42,22 @@ output: html_document
       Stand|Standing
       Lay|Laying  
       
+
+#####Tranformations
+
+2. Transformations
+  + Long vs Wide form, description
+  + Given instructions of assignment, either Long or Wide form is acceptable (Wood, 2014)^4^.  Both meet the basic criteria of tidy data, which is that "Each varialbe forms a column, Each observation forms a row, Each type of observational unit forms a table" (Codd, 1990, as cited in Wickham, 2014)^2,3^.
+    + Specifically, in Wood's FAQ, item **"Are you sure either the wide or narrow form of the data is tidy?"**  
+          + *"Yes. The wide or narrow form is tidy."*
+      + It is debatable whether the wide form violates the principle that Column headers should be varialbe names, not values (Wickham, 2014, pg 5, section 3.1)^3^
+  + For this assignment, the long and narrow form of the data was chosen.
+    + Though a matter of preference, the wide form, having 180 rows and 88 columns, is a bit more difficult to present on a screen row by row.  So, for aesthetics, 1 reason to choose the narrow form is that all columns fit on the screen, with each row presented completely. 
+    + Perhaps more importantly, the long **cannot** be argued to violate the principle that Column headers should be varialbe names, not values (Wickham, 2014, pg 5, section 3.1)^3^.  In other words, it is clear that melting the data from 88 columns into 4 constitutes tidy data, and accordingly, the narrow form was chosen as it provides a much more processed and tidy data set that can be immediatelly used for further analyses.  
+
 #####Features
 
-3. Feature (Anguita et al., 2012)
+4. Feature (Anguita et al., 2012)^1^
   + Original 561 features are found in features.txt and features_info.txt  
   + 
 
@@ -136,7 +150,7 @@ output: html_document
 
 #####Values
 
-4. mean(value) 
+5. mean(value) 
   + Performed in this data tidying assignment
     + Value is the mean of each feature, grouped by Subject and Feature
     + Units include
@@ -149,8 +163,10 @@ output: html_document
 
 1. Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
 
-2. Hadley Wickham. Tidy Data. Journal of Statistical Software, 59 (10), Sep 2014 http://www.jstatsoft.org/v59/i10/paper
+2. Codd EF (1990), The relational model for database management: version 2. Addison-Wesley Longman Publishing Co., Inc., Boston, MA, USA. ISBN 0-201-14192-2.
 
-3. David Wood, David's Project FAQ December 2014, https://class.coursera.org/getdata-016/forum/thread?thread_id=50
+3. Hadley Wickham. Tidy Data. Journal of Statistical Software, 59 (10), Sep 2014 http://www.jstatsoft.org/v59/i10/paper
+
+4. David Wood, David's Project FAQ December 2014, https://class.coursera.org/getdata-016/forum/thread?thread_id=50
 
 
