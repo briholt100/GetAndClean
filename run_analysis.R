@@ -22,7 +22,7 @@ getwd()
 #setwd("Insert your directory location here/UCI HAR Dataset/")
 
 ########################################################################
-#libraries needed; be sure these packages are first installed 
+#libraries needed; be sure these packages are installed first
 ########################################################################
 #install.packages("dplyr")
 #install.packages("tidyr")
@@ -108,7 +108,11 @@ final<-summarize(group_by(long_tidy,Subject,Activity,Feature),mean(value))
 
 ####This will produce the tidy data as requested in the assignment
 
+###This command shows the first 10 rows for subject 1
 final
+
+###This command shows the first 10 rows for subject 2
+final[517:527,]
 
 ########################################################################
 ###creating sharable file
