@@ -18,7 +18,7 @@ output: html_document
 1. [Running the "run_analysis.R" script](https://github.com/briholt100/GetAndClean/blob/master/README.md#running-the-run_analysisr-script)
 2. [Directories and files included](https://github.com/briholt100/GetAndClean/blob/master/README.md#directories-and-files-included-in-this-repository)
 3. [Obtaining data](https://github.com/briholt100/GetAndClean/blob/master/README.md#obtaining-data)
-4. [References](https://github.com/briholt100/GetAndClean/blob/master/README.md#References)
+4. [References](https://github.com/briholt100/GetAndClean/blob/master/README.md#references)
 
 ##=================================
 
@@ -63,13 +63,13 @@ train|Directory containing train data
 
 File     |   Description
 ---|---
-Codebook.Rmd|Contains descriptions of necessary variables, features, activities
-README.md|This document
-Human_Activity_Recognition_README.txt|Contains description of original study and data source
 activity_labels.txt|Lists names of 6 activities performed by subjects (e.g., sitting, walking)
+Codebook.Rmd|Contains descriptions of necessary variables, features, activities, explanations for transorms
 features.txt|Original list of Human Activity Recognition Features (561 total)
 features_info.txt|Contains how feature names were dervived in original study
 finalTidyData.txt|Data after processing meeting "tidy" data requirements
+Human_Activity_Recognition_README.txt|Contains description of original study and data source
+README.md|This document
 run_analysis.R|R statistics script performed on test and train data to create tidy data
 
 
@@ -85,16 +85,8 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 The website hosting this data also has a full description:
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-
-
-
 ##=================================
-
 
 ######References
 
 Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
-
-Hadley Wickham. Tidy Data. Journal of Statistical Software, 59 (10), Sep 2014 http://www.jstatsoft.org/v59/i10/paper
-
-David Wood, David's Project FAQ December 2014, https://class.coursera.org/getdata-016/forum/thread?thread_id=50
