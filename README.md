@@ -15,10 +15,10 @@ output: html_document
 
 ######Note: See codebook for explanations of transformations and decisions
 
-1. Running the "run_analysis.R" script
-2. Directories and files included
-3. Obtaining data
-4. References
+1. [Running the "run_analysis.R" script](https://github.com/briholt100/GetAndClean/blob/master/README.md#running-the-run_analysisr-script)
+2. [Directories and files included](https://github.com/briholt100/GetAndClean/blob/master/README.md#directories-and-files-included-in-this-repository)
+3. [Obtaining data](https://github.com/briholt100/GetAndClean/blob/master/README.md#obtaining-data)
+4. [References](https://github.com/briholt100/GetAndClean/blob/master/README.md#References)
 
 ##=================================
 
@@ -49,7 +49,8 @@ output: html_document
     + codebook.md
 4. Run the full script: run_analysis.R
   + You should a confirmation of your working directory, using getwd() comand.
-  + The last output will include the  data frame titled "final"
+  + The first output will the first 10 rows of data from "final"
+  + The last output will be first 10 rows from subject "2"
 5. There are a few commands at the end that have been turned into comments so that the script does not save any files to your computer.
 
 ### Directories and files included in this repository:
@@ -90,7 +91,7 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 ##=================================
 
 
-**References**
+######References
 
 Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
 
