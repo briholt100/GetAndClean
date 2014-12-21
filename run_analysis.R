@@ -1,10 +1,7 @@
 ##########
-#Issues to consider:
-# Change feature/variable names?
-# include all variables with term "mean|std", or should I exclude the few mentioned in FAQ
-#create markdown file
-#create readme
-#create code book. 
+#Coursera Get and Clean Data, Course Number 16 December 2014
+#Script by Brian Holt
+#See github repository for readme, codebook, data: https://github.com/briholt100/GetAndClean
 
 
 ########################################################################
@@ -26,16 +23,15 @@ getwd()
 ########################################################################
 #install.packages("dplyr")
 #install.packages("tidyr")
-#install.packages("knitr")
 library("dplyr")
 library("tidyr")
-library("knitr")
+
 
 ########################################################################
 #Create Table for Test Data 
 ########################################################################
 subject_test<-read.table("./test/subject_test.txt",sep="")
-X_test<-read.table("./test/X_test.txt",sep="")
+X_test<-read.table("./test/X_test.txt",sep="") #####This will take some processing time####
 Y_test<-read.table("./test/y_test.txt",sep="")
 test_set<-cbind(subject_test,Y_test,X_test)
 
@@ -43,7 +39,7 @@ test_set<-cbind(subject_test,Y_test,X_test)
 #Create Table for train Data 
 ########################################################################
 subject_train<-read.table("./train/subject_train.txt",sep="")
-X_train<-read.table("./train/X_train.txt",sep="")   #####This will take some processing time####
+X_train<-read.table("./train/X_train.txt",sep="")   #####This will take some even longer processing time####
 Y_train<-read.table("./train/y_train.txt",sep="")
 train_set<-cbind(subject_train,Y_train,X_train)
 
@@ -79,7 +75,7 @@ KeptColumns<-grep("subject|activity|mean|std",fullColNames,ignore.case=T,value=F
 tidy<-full_data[,KeptColumns]
 
 ########################################################################
-#Rename Activity
+#Rename Activity from numbers to labels
 ########################################################################
 tidy$Activity<-with(tidy,
                     ifelse(tidy$Activity==1,"Walk",
@@ -104,18 +100,23 @@ final<-summarize(group_by(long_tidy,Subject,Activity,Feature),mean(value))
 #quick sanity check to see if this data produces same 
 #data (albeit formated diffently) to that posted in FAQ by "Brandon"
 #final[final$Subject==1,]
+########################################################################
 
 
-####This will produce the tidy data as requested in the assignment
+########################################################################
+#This will produce the tidy data as requested in the assignment
+########################################################################
 
 ###This command shows the first 10 rows for subject 1
+
 final
 
 ###This command shows the first 10 rows for subject 2
+
 final[517:527,]
 
 ########################################################################
-###creating sharable file
+###creating sharable text file
 ########################################################################
 #write.table(final,file = "./finalTidyData.txt",row.name=FALSE)
 

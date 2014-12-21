@@ -1,5 +1,5 @@
 ---
-title: "Smartphone CodeBook GetClean"
+title: "Smartphone CodeBook"
 author: "Brian Holt"
 date: "12/19/2014"
 output: html_document
@@ -7,16 +7,17 @@ output: html_document
 
 ### Get and Clean data Assignment __CODEBOOK__
 
-#### December 2014
+##### December 2014
 
-### DATA DICTIONARY  
+#### DATA DICTIONARY  
 ##### Average of Each Variable for Each Activity and Each Subject
 
 #### Table of Contents
 1. [Subjects](https://github.com/briholt100/GetAndClean/blob/master/Codebook.md#subjects)
 2. [Activities](https://github.com/briholt100/GetAndClean/blob/master/Codebook.md#activities)
 3. [Transformations](https://github.com/briholt100/GetAndClean/blob/master/Codebook.md#tranformations)
-4. [Features](https://github.com/briholt100/GetAndClean/blob/master/Codebook.md#features)
+4. [Features](https://github.com/briholt100/GetAndClean/blob/master/Codebook.md#features)  
+   # [Final set of features](https://github.com/briholt100/GetAndClean/blob/master/Codebook.md#the-final-set-of-features-include)
 5. [Values](https://github.com/briholt100/GetAndClean/blob/master/Codebook.md#values)
 6. [References](https://github.com/briholt100/GetAndClean/blob/master/Codebook.md#references)
 
@@ -26,7 +27,7 @@ output: html_document
 
 1. Subject (Anguita et al., 2012)^1^
      + Subject Unique Identifer
-     + There are 30 subjects, numbered from "1" through "30"  
+     + There are 30 volunteer subjects, numbered from "1" through "30"  
 
 #####Activities
 
@@ -195,9 +196,16 @@ output: html_document
 
 5. mean(value) 
   + Performed in this data tidying assignment
-    + Value is the mean of each feature, grouped by Subject and Feature
-    + Units include
-      + normalized between -1 and 1  
+    + Value is the mean of each 86 features, grouped by Subject and Activity, giving a list of 15,480 rows and 4 columns
+    + Units
+      + normalized between -1 and 1  (Anguita et al., 2012)^1^  
+      + "Using an embedded accelerometer and gyroscope, [the researchers] captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz." (Anguita et al., 2012)^1^  
+      + "The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain." (Anguita et al., 2012)^1^    
+      
+    + For each record it is provided:
+        - Means of all the 86 above mentioned features
+        - Its activity label. 
+        - An identifier of the subject who carried out the experiment.
       
 
 
