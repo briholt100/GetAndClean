@@ -23,6 +23,7 @@ output: html_document
 ##=================================
 
 ###### Running the "run_analysis.R" script
+######Note that the script itself has comments describing each step.
 
 1. Obtain data, either by
   + cloning this repository
